@@ -1,39 +1,35 @@
 # Authentication-flask-psql
-Flask postgreSQL Login Register System with checking token
+Blockchain analytics tool using Django![image](https://user-images.githubusercontent.com/80199144/152834294-4a743b07-213d-4157-bb57-f0cfed651102.png)
+
 
 ### Instalation
-Install my repoisitory 
+Install our repoisitory 
 ```bash
-git clone https://github.com/kuka666/authentication-flask-psql.git
+https://github.com/kuka666/Django-Eth-Charts.git
 pip install -r requirements.txt
 
 Also create table in postgresql:
 
-Create the database with name kuka
-
-CREATE TABLE accounts (
-	id serial PRIMARY KEY,
-	username VARCHAR ( 50 ) NOT NULL,
-	password VARCHAR ( 255 ) NOT NULL,
-	token VARCHAR ( 300 ) NOT NULL
-);
-
-
-
-
+Create the database with name eth
+python manage.py makemigrations python manage.py migrate python manage.py runserver
 ```
 
+```bash
+#change your setting
+DATABASES = { 'default': { 'ENGINE': 'django.db.backends.postgresql', 'NAME': 'database name', #YOUR DATABASE NAME 'USER': 'postgres', #USER NAME 'PASSWORD': 'postgresql password', #YOUR PASSWORD 'HOST': 'localhost', } } 
+
+```
 ### Usage
 ```bash
-cd authentication-flask-psql
-cd src
+python manage.py runserver
 ```
 
 ### in the 19 and 20 rows write the usernmae and password
 ```bash
 run the server in compilator 
-web.py
-http://127.0.0.1:5000/
+http://127.0.0.1:8000/       for bar chart
+http://127.0.0.1:8000/pie/   for pie chart
+http://127.0.0.1:8000/line/  for line chart
 ```
 
 
@@ -42,20 +38,23 @@ http://127.0.0.1:5000/
 
 Usage examples:
 ```python
-# get the login
-http://127.0.0.1:5000/login/
+# get the bar chart
+http://127.0.0.1:8000/ 
 ```
-![image](https://user-images.githubusercontent.com/80199144/138552960-bb60f7be-c78d-4f55-9e85-86be5144f0eb.png)
+![1](https://user-images.githubusercontent.com/80199144/152835054-e8bd79c4-bb70-4313-91a1-0f2428284d25.jpg)
 ```python
-# get rhe register
-http://127.0.0.1:5000/register
+# get rhe pie chart
+http://127.0.0.1:8000/pie/
 ```
-![image](https://user-images.githubusercontent.com/80199144/138553002-4deaf614-3ad4-4d9b-8725-437e7b4cdb97.png)
+![2](https://user-images.githubusercontent.com/80199144/152835118-568cd1c0-81be-427c-806e-2ee4183cef71.jpg)
+
+
 ```python
-# get the protected
-http://127.0.0.1:5000/protected?token=(write ther token)
+# get the line chart
+http://127.0.0.1:8000/line/ 
 ```
-![image](https://user-images.githubusercontent.com/80199144/138553040-87142734-217c-4d2b-84be-8bd7e95b1ada.png)
+![3](https://user-images.githubusercontent.com/80199144/152835154-1650e2b3-964f-4f81-8cea-b87eff05df74.jpg)
+
 
 
 
